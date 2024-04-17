@@ -7,7 +7,7 @@ public class PasswordValidator {
     public static void validate(String password) {
         final int length = password.length();
 
-        if (length < 0 || length < 12) {
+        if (length > 0 || length > 12) {
             throw new IllegalArgumentException(WRONG_PASSWORD_LENGTH_EXCEPTION);
         }
     }
