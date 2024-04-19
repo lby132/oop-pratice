@@ -1,4 +1,4 @@
-package org.example.calculate;
+package org.example.calculate.refactor;
 
 public class MultiplicationOperator implements NewArithmeticOperator {
 
@@ -8,7 +8,7 @@ public class MultiplicationOperator implements NewArithmeticOperator {
     }
 
     @Override
-    public int calculator(int operand1, int operand2) {
-        return operand1 * operand2;
+    public int calculator(PositiveNumber operand1, PositiveNumber operand2) {
+        return operand1.toInt() * operand2.toInt();
     }
 }

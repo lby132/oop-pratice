@@ -1,8 +1,8 @@
-package org.example.calculate;
+package org.example.calculate.refactor;
 
 public interface NewArithmeticOperator {
 
     boolean supports(String operator); // 이 오퍼레이터를 지원하는지 여부 메소드
 
-    int calculator(int operand1, int operand2);
+    int calculator(PositiveNumber operand1, PositiveNumber operand2);
 }

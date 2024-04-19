@@ -1,7 +1,9 @@
 package org.example;
 
-import org.example.calculate.Calculator;
+import org.example.calculate.refactor.Calculator;
+import org.example.calculate.refactor.PositiveNumber;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -9,6 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.junit.jupiter.params.provider.Arguments.*;
 
 /**
@@ -20,10 +23,10 @@ import static org.junit.jupiter.params.provider.Arguments.*;
  */
 public class CalculatorTest {
 
-    @DisplayName("덧셈 연산을 수행한다.")
+    @DisplayName("연산을 수행한다.")
     @ParameterizedTest
     @MethodSource("formulaAndResult")
-    void additionTest(int operand1, String operator, int operand2, int result) {
+    void additionTest(PositiveNumber operand1, String operator, PositiveNumber operand2, int result) {
         int calculateResult = Calculator.calculate(operand1, operator, operand2);
 
         assertThat(calculateResult).isEqualTo(result);
@@ -38,11 +41,4 @@ public class CalculatorTest {
         );
     }
 
-    /*@DisplayName("뺄셈 연산을 수행한다.")
-    @Test
-    void subtractionTest() {
-        int result = Calculator.calculate(1, "-", 2);
-
-        assertThat(result).isEqualTo(-1);
-    }*/
 }
