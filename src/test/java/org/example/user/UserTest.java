@@ -1,4 +1,4 @@
-package org.example;
+package org.example.user;
 
 import org.example.user.User;
 import org.junit.jupiter.api.DisplayName;

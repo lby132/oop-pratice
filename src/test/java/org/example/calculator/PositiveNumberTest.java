@@ -1,4 +1,4 @@
-package org.example;
+package org.example.calculator;
 
 import org.example.calculate.refactor.PositiveNumber;
 import org.junit.jupiter.params.ParameterizedTest;
