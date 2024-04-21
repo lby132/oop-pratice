@@ -26,8 +26,8 @@ public class CalculatorTest {
     @DisplayName("연산을 수행한다.")
     @ParameterizedTest
     @MethodSource("formulaAndResult")
-    void additionTest(PositiveNumber operand1, String operator, PositiveNumber operand2, int result) {
-        int calculateResult = Calculator.calculate(operand1, operator, operand2);
+    void additionTest(int operand1, String operator, int operand2, int result) {
+        int calculateResult = Calculator.calculate(new PositiveNumber(operand1), operator, new PositiveNumber(operand2));
 
         assertThat(calculateResult).isEqualTo(result);
     }
